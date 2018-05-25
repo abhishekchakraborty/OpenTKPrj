@@ -1,0 +1,4 @@
+# Folders to be ignored
+.vs\OpenTKPrj\
+OpenTK1\bin\Debug
+OpenTK1\obj\Debug
