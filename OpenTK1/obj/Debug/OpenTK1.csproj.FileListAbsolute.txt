@@ -1,0 +1,13 @@
+E:\A_Projects\OpenTKPrj\OpenTK1\bin\Debug\OpenTK1.exe.config
+E:\A_Projects\OpenTKPrj\OpenTK1\bin\Debug\OpenTK1.exe
+E:\A_Projects\OpenTKPrj\OpenTK1\bin\Debug\OpenTK1.pdb
+E:\A_Projects\OpenTKPrj\OpenTK1\bin\Debug\OpenTK.dll
+E:\A_Projects\OpenTKPrj\OpenTK1\bin\Debug\OpenTK.pdb
+E:\A_Projects\OpenTKPrj\OpenTK1\bin\Debug\OpenTK.xml
+E:\A_Projects\OpenTKPrj\OpenTK1\obj\Debug\OpenTK1.csprojAssemblyReference.cache
+E:\A_Projects\OpenTKPrj\OpenTK1\obj\Debug\OpenTK1.Properties.Resources.resources
+E:\A_Projects\OpenTKPrj\OpenTK1\obj\Debug\OpenTK1.csproj.GenerateResource.cache
+E:\A_Projects\OpenTKPrj\OpenTK1\obj\Debug\OpenTK1.csproj.CoreCompileInputs.cache
+E:\A_Projects\OpenTKPrj\OpenTK1\obj\Debug\OpenTK1.csproj.CopyComplete
+E:\A_Projects\OpenTKPrj\OpenTK1\obj\Debug\OpenTK1.exe
+E:\A_Projects\OpenTKPrj\OpenTK1\obj\Debug\OpenTK1.pdb
