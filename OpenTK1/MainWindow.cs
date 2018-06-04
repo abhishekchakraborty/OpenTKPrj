@@ -24,9 +24,31 @@ namespace OpenTK1
             GL.Viewport(0, 0, Width, Height);
         }
 
+        private int _program;
+        private int _vertexArray;
+
         protected override void OnLoad(EventArgs e)
         {
             CursorVisible = true;
+            _program = CompileShaders();
+
+            GL.GenVertexArrays(1, out _vertexArray);
+            GL.BindVertexArray(_vertexArray);
+
+            Closed += OnClosed;
+        }
+
+        private void OnClosed(object sender, EventArgs eventArgs)
+        {
+            Exit();
+        }
+
+        public override void Exit()
+        {
+            GL.DeleteVertexArrays(1, ref _vertexArray);
+
+            GL.DeleteProgram(_program);
+            base.Exit();
         }
 
         //protected override void OnUpdateFrame(FrameEventArgs e)
@@ -59,7 +81,36 @@ namespace OpenTK1
             GL.ClearColor(backColor);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
+            GL.UseProgram(_program);
+
+            GL.DrawArrays(PrimitiveType.Points, 0, 1);
+            GL.PointSize(10);
+
             SwapBuffers();
+        }
+
+
+        private int CompileShaders()
+        {
+            var vertexShader = GL.CreateShader(ShaderType.VertexShader);
+            GL.ShaderSource(vertexShader, System.IO.File.ReadAllText(@"..\..\vertexShader.vert") );
+            GL.CompileShader(vertexShader);
+
+            var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
+            GL.ShaderSource(fragmentShader, System.IO.File.ReadAllText(@"..\..\fragmentShader.frag"));
+            GL.CompileShader(fragmentShader);
+
+            var program = GL.CreateProgram();
+            GL.AttachShader(program, vertexShader);
+            GL.AttachShader(program, fragmentShader);
+            GL.LinkProgram(program);
+
+            GL.DetachShader(program, vertexShader);
+            GL.DetachShader(program, fragmentShader);
+            GL.DeleteShader(vertexShader);
+            GL.DeleteShader(fragmentShader);
+
+            return program;
         }
     }
 }
